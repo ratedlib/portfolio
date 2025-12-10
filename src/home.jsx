@@ -41,6 +41,7 @@ import TypewriterText from "./components/TypewriterText.jsx";
 import Card from "flyonui/components/card/index.js";
 import button from "flyonui/components/button/index.js";
 import config from './config.js';
+import emailjs from '@emailjs/browser';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -54,10 +55,55 @@ export default function Home() {
   const [commentList, setCommentList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  // Contact form state
+  const [contactForm, setContactForm] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [contactLoading, setContactLoading] = useState(false);
+  const [contactStatus, setContactStatus] = useState(''); // 'success', 'error', ''
 
   useEffect(() => {
     fetchComments();
   }, []);
+
+  // Handle contact form submission
+  const handleContactSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!contactForm.name || !contactForm.email || !contactForm.message) {
+      alert('Please fill in all fields');
+      return;
+    }
+
+    setContactLoading(true);
+    setContactStatus('');
+
+    try {
+      // EmailJS configuration
+      await emailjs.send(
+        config.service_vqb0xua,
+        config.template_ukvp8eq,
+        {
+          from_name: contactForm.name,
+          from_email: contactForm.email,
+          message: contactForm.message,
+          to_name: 'Muhammad Fauzan',
+        },
+        config.gUTfWRi7CQ2yuBFHq
+      );
+
+      setContactStatus('success');
+      setContactForm({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Email send failed:', error);
+      setContactStatus('error');
+    } finally {
+      setContactLoading(false);
+    }
+  };
 
   const fetchComments = async () => {
     setLoading(true);
@@ -470,45 +516,69 @@ export default function Home() {
                 </button>
                 <button
                   className="text-gray-900 bg-white backdrop-blur-xs rounded-xl inset-shadow-xs border border-gray-200 w-full max-w-xs px-4 md:px-6 py-2 text-sm transition-all duration-200 hover:bg-gray-300 hover:scale-105"
-                  onClick={() => window.open('https://wa.me/60123456789', '_blank')}
+                  onClick={() => window.open('https://wa.me/60174304025', '_blank')}
                 >
                   <FaSteam className="inline-block mr-2 w-5 h-5" />
                   Steam
                 </button>
                 <button
                   className="text-gray-900 bg-white backdrop-blur-xs rounded-xl inset-shadow-xs border border-gray-200 w-full max-w-xs px-4 md:px-6 py-2 text-sm transition-all duration-200 hover:bg-gray-300 hover:scale-105"
-                  onClick={() => window.open('https://steamcommunity.com/id/yourprofile', '_blank')}
+                  onClick={() => window.open('https://steamcommunity.com/id/getrektpenguin/', '_blank')}
                 >
                   <IoIosMail className="inline-block mr-2 w-5 h-5" />
                   mdfauzan.2109@gmail.com
                 </button>
               </div>
 
-              {/* Contact Form */}
+              {
+                
+              }
               <div className="flex-1 flex justify-center items-center">
                 <div className="w-full max-w-md bg-white backdrop-blur-md rounded-2xl shadow-lg border border-white/20 p-4 md:p-6">
-                  <form className="flex flex-col space-y-3 md:space-y-4">
+                  <form onSubmit={handleContactSubmit} className="flex flex-col space-y-3 md:space-y-4">
                     <input
                       type="text"
                       placeholder="Your Name"
+                      value={contactForm.name}
+                      onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
                       className="text-black w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      required
                     />
                     <input
                       type="email"
                       placeholder="Your Email"
+                      value={contactForm.email}
+                      onChange={(e) => setContactForm({ ...contactForm, email: e.target.value })}
                       className="text-black w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                      required
                     />
                     <textarea
                       placeholder="Your Message"
+                      value={contactForm.message}
+                      onChange={(e) => setContactForm({ ...contactForm, message: e.target.value })}
                       className="text-black w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
                       rows="3"
+                      required
                     />
                     <button
                       type="submit"
-                      className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 font-medium"
+                      disabled={contactLoading}
+                      className="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors duration-200 font-medium disabled:bg-blue-300 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {contactLoading ? 'Sending...' : 'Send Message'}
                     </button>
+                    
+                    {/* Status Messages */}
+                    {contactStatus === 'success' && (
+                      <p className="text-green-600 text-sm text-center font-medium">
+                        ✓ Message sent successfully! I'll get back to you soon.
+                      </p>
+                    )}
+                    {contactStatus === 'error' && (
+                      <p className="text-red-600 text-sm text-center font-medium">
+                        ✗ Failed to send message. Please try again or email me directly.
+                      </p>
+                    )}
                   </form>
                 </div>
               </div>
