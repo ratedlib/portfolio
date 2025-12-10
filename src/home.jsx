@@ -312,7 +312,7 @@ export default function Home() {
               <div className="bg-white backdrop-blur-xs rounded-2xl inset-shadow-xs border border-gray-200 pb-2 mx-4 md:mx-12 lg:mx-20 mt-4 md:mt-5">
                 <p className="mt-2 text-base md:text-lg text-gray-700 text-center opacity-0 animate-text-reveal animation-delay-300 px-4">
                   Greetings! I'm Fauzan - a passionate software engineer.<br className="hidden md:block"/>
-                  I like to play games, create things, and code stuffs.
+                   I like to play games, create things, and code stuffs.
                 </p>
               </div>
             </div>
