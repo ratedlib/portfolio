@@ -7,6 +7,7 @@ import { HiOutlineExternalLink, HiOutlineBookOpen } from "react-icons/hi";
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import './index.css';
+import config from './config.js';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -37,7 +38,7 @@ export default function Blogs() {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/blogs');
+      const response = await fetch(`${config.API_URL}/api/blogs`);
       const data = await response.json();
       setBlogs(data);
       

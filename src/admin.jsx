@@ -5,6 +5,7 @@ import { FaTrash, FaEdit, FaPlus, FaSave, FaTimes, FaLock, FaUnlock, FaExternalL
 import { HiOutlineBriefcase, HiOutlineCode, HiOutlineChatAlt2, HiOutlineBookOpen } from "react-icons/hi";
 import { IoArrowBack } from "react-icons/io5";
 import './index.css';
+import config from './config.js';
 
 const ADMIN_PIN = "210903";
 
@@ -70,7 +71,7 @@ export default function Admin() {
   const fetchComments = async () => {
     setCommentsLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/comments');
+      const response = await fetch(`${config.API_URL}/api/comments`);
       const data = await response.json();
       setComments(data);
     } catch (error) {
@@ -83,7 +84,7 @@ export default function Admin() {
   const handleDeleteComment = async (id) => {
     if (!confirm('Are you sure you want to delete this comment?')) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/comments/${id}`, {
+      const response = await fetch(`${config.API_URL}/api/comments/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -98,7 +99,7 @@ export default function Admin() {
   const fetchExperiences = async () => {
     setExperiencesLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/experiences');
+      const response = await fetch(`${config.API_URL}/api/experiences`);
       const data = await response.json();
       setExperiences(data);
     } catch (error) {
@@ -151,7 +152,7 @@ export default function Admin() {
 
     try {
       if (editingExperience) {
-        const response = await fetch(`http://localhost:5000/api/experiences/${editingExperience}`, {
+        const response = await fetch(`${config.API_URL}/api/experiences/${editingExperience}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
@@ -161,7 +162,7 @@ export default function Admin() {
           resetExperienceForm();
         }
       } else {
-        const response = await fetch('http://localhost:5000/api/experiences', {
+        const response = await fetch(`${config.API_URL}/api/experiences`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload),
@@ -179,7 +180,7 @@ export default function Admin() {
   const handleDeleteExperience = async (id) => {
     if (!confirm('Are you sure you want to delete this experience?')) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/experiences/${id}`, {
+      const response = await fetch(`${config.API_URL}/api/experiences/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -194,7 +195,7 @@ export default function Admin() {
   const fetchBlogs = async () => {
     setBlogsLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/blogs');
+      const response = await fetch(`${config.API_URL}/api/blogs`);
       const data = await response.json();
       setBlogs(data);
     } catch (error) {
@@ -234,7 +235,7 @@ export default function Admin() {
     e.preventDefault();
     try {
       if (editingBlog) {
-        const response = await fetch(`http://localhost:5000/api/blogs/${editingBlog}`, {
+        const response = await fetch(`${config.API_URL}/api/blogs/${editingBlog}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(blogForm),
@@ -244,7 +245,7 @@ export default function Admin() {
           resetBlogForm();
         }
       } else {
-        const response = await fetch('http://localhost:5000/api/blogs', {
+        const response = await fetch(`${config.API_URL}/api/blogs`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(blogForm),
@@ -262,7 +263,7 @@ export default function Admin() {
   const handleDeleteBlog = async (id) => {
     if (!confirm('Are you sure you want to delete this blog?')) return;
     try {
-      const response = await fetch(`http://localhost:5000/api/blogs/${id}`, {
+      const response = await fetch(`${config.API_URL}/api/blogs/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {

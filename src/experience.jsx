@@ -7,6 +7,7 @@ import { HiOutlineBriefcase, HiOutlineCode } from "react-icons/hi";
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import './index.css';
+import config from './config.js';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -27,7 +28,7 @@ export default function Experience() {
   const fetchExperiences = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/experiences');
+      const response = await fetch(`${config.API_URL}/api/experiences`);
       const data = await response.json();
       setExperiences(data);
     } catch (error) {

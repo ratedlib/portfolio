@@ -40,6 +40,7 @@ import './index.css';
 import TypewriterText from "./components/TypewriterText.jsx";
 import Card from "flyonui/components/card/index.js";
 import button from "flyonui/components/button/index.js";
+import config from './config.js';
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -61,7 +62,7 @@ export default function Home() {
   const fetchComments = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/comments'); 
+      const response = await fetch(`${config.API_URL}/api/comments`); 
       const data = await response.json();
       setCommentList(data);
     } catch (error) {
@@ -80,7 +81,7 @@ export default function Home() {
 
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/comments', {
+      const response = await fetch(`${config.API_URL}/api/comments`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, comments }),
