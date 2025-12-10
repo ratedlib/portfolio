@@ -84,15 +84,15 @@ export default function Home() {
     try {
       // EmailJS configuration
       await emailjs.send(
-        config.service_vqb0xua,
-        config.template_ukvp8eq,
+        config.EMAILJS_SERVICE_ID,
+        config.EMAILJS_TEMPLATE_ID,
         {
           from_name: contactForm.name,
           from_email: contactForm.email,
           message: contactForm.message,
           to_name: 'Muhammad Fauzan',
         },
-        config.gUTfWRi7CQ2yuBFHq
+        config.EMAILJS_PUBLIC_KEY
       );
 
       setContactStatus('success');
