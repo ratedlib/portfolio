@@ -1,0 +1,76 @@
+
+@import "tailwindcss";
+
+
+@tailwind utilities;
+@import "tailwindcss";
+@plugin "flyonui";
+
+@theme {
+  --color-html: #e34c26;
+  --color-javascriptcol: #f0db4f;
+}
+
+@font-face {
+  font-family: 'Arimo';
+  src: url("../src/assets/Fonts/Arimo-SemiBold.ttf") format("truetype");
+}
+
+@theme {
+  --font-arimo: Arimo, "sans-serif";
+  }
+
+@font-face {
+  font-family: 'Quantico';
+  src: url("../src/assets/Fonts/Quantico-Bold.ttf") format("truetype");
+}
+
+@theme {
+  --font-quantico: Quantico, "sans-serif";
+  }
+
+
+@keyframes text-reveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.animate-text-reveal {
+  animation: text-reveal 3s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.animation-delay-300 {
+  animation-delay: 2s;
+}
+
+.link-effect {
+  text-decoration: none;
+  transition: all 0.4s;
+}
+
+.link-effect:hover {
+  text-shadow: 0 0 10px #79749b, 0 0 20px #79749b, 0 0 30px #79749b;
+}
+
+
+
+
+.typewriter-cursor::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+
+
+
+

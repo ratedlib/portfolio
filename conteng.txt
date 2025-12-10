@@ -1,0 +1,43 @@
+      <div className="flex flex-col justify-center w-full p-10">
+        <div className="flex flex-row"></div>
+          <div className="flex-5 items-center bg-white/90 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 pb-10 mx-15">
+            <div className="w-full h-12 bg-gray-200 rounded-t-2xl mb-6">
+              <div className="flex flex-row items-center justify-between">
+                <div className="flex flex-row ml-4 mt-4">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full ml-2"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full ml-2"></div>
+                </div>
+                <h2 className="font-arimo text-gray-900 mr-auto ml-auto mt-4">Welcome to My Portfolio</h2>
+                <div className="w-20"></div> {/* Spacer for balance */}
+              </div>
+            </div>
+
+
+
+            <div className=" pt-2 pb-2 mb-2 w-auto bg-white backdrop-blur-md rounded-2xl shadow-lg border border-white/20 w-0.5 text-gray-900  hover:scale-105 transition-transform duration-300 hover:shadow-purple-200">
+                  <button onClick={() => window.open("mailto:mdfauzan.2109@gmail.com")}>
+                    mdfauzan.2109@gmail.com
+                  </button>
+                </div>
+                  <div className=" pt-2 pb-2 mb-2 w-auto bg-white backdrop-blur-md rounded-2xl shadow-lg border border-white/20 w-0.5 text-gray-900  hover:scale-105 transition-transform duration-300 hover:shadow-purple-200">
+                  <button onClick={() => window.open("mailto:mdfauzan.2109@gmail.com")}>
+                    Whatsapp
+                  </button>
+                </div>
+                  <div className=" pt-2 pb-2 w-auto bg-white backdrop-blur-md rounded-2xl shadow-lg border border-white/20 w-0.5 text-gray-900  hover:scale-105 transition-transform duration-300 hover:shadow-purple-200">
+                  <button onClick={() => window.open("mailto:mdfauzan.2109@gmail.com")}>
+                    Steam
+                  </button>
+                </div>
+
+
+//IMPORTANT
+1. belajar javascript (dom manipulation, promises, callback, async)
+2. master async await
+3. belajar node.js
+4. push git
+
+after portfolio, learn laravel. (php)
+free time, get some C#
+
