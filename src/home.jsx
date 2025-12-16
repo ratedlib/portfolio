@@ -56,14 +56,13 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
-  // Contact form state
   const [contactForm, setContactForm] = useState({
     name: '',
     email: '',
     message: ''
   });
   const [contactLoading, setContactLoading] = useState(false);
-  const [contactStatus, setContactStatus] = useState(''); // 'success', 'error', ''
+  const [contactStatus, setContactStatus] = useState(''); 
 
   useEffect(() => {
     fetchComments();
@@ -150,7 +149,7 @@ export default function Home() {
 
   return (
     <div className="bg-gray-200 min-h-screen relative">
-      {/* Social Links - Hidden on mobile */}
+      {}
       <div className="absolute top-6 right-8 z-50 flex-col space-y-4 hidden lg:flex">
         <a
           href="https://www.instagram.com/kewl808"
@@ -186,7 +185,7 @@ export default function Home() {
         </a>
       </div>
 
-      {/* Logo */}
+      {}
       <div className="absolute top-4 left-4 md:top-6 md:left-8 z-50">
         <img
           className="w-10 h-10 md:w-12 md:h-12 object-contain drop-shadow-md"
@@ -197,7 +196,7 @@ export default function Home() {
 
       <title>Muhammad Fauzan</title>
 
-      {/* Desktop Navigation */}
+      {}
       <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40 bg-white/30 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 px-4 md:px-8 py-3 md:py-4 hidden md:block">
         <nav className="flex items-center justify-center space-x-6 md:space-x-10">
           {navigation.map((item) => (
@@ -212,7 +211,7 @@ export default function Home() {
         </nav>
       </header>
 
-      {/* Mobile Navigation Button */}
+      {}
       <button
         className="fixed top-4 right-4 z-50 md:hidden bg-white/80 backdrop-blur-md p-2 rounded-xl shadow-lg"
         onClick={() => setMobileMenuOpen(true)}
@@ -220,7 +219,7 @@ export default function Home() {
         <Bars3Icon className="w-6 h-6 text-gray-900" />
       </button>
 
-      {/* Mobile Menu */}
+      {}
       <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="md:hidden">
         <div className="fixed inset-0 z-50 bg-black/50" />
         <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm">
@@ -250,7 +249,7 @@ export default function Home() {
                 Admin
               </Link>
             </div>
-            {/* Social Links in Mobile Menu */}
+            {}
             <div className="flex gap-4 pt-4 border-t border-gray-200">
               <a href="https://www.instagram.com/kewl808" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-pink-600">
                 <FaInstagram className="w-6 h-6" />
@@ -269,7 +268,7 @@ export default function Home() {
         </DialogPanel>
       </Dialog>
       
-      {/* Admin Button - Bottom Right */}
+      {}
       <Link
         to="/admin"
         className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-white/80 backdrop-blur-md p-2 md:p-3 rounded-full shadow-lg border border-white/20 hover:bg-white hover:scale-110 transition-all duration-300 group"
@@ -278,7 +277,7 @@ export default function Home() {
         <HiOutlineCog className="w-5 h-5 md:w-6 md:h-6 text-gray-600 group-hover:text-purple-600 group-hover:rotate-90 transition-all duration-300" />
       </Link>
 
-      {/* Hero Section */}
+      {}
       <main className="pt-16 md:pt-20 min-h-screen bg-gradient-to-tr from-neutral-100 to-slate-500">
         <div className="flex flex-col justify-center w-full p-4 md:p-10">
           <div className="flex flex-row justify-center">
@@ -299,7 +298,7 @@ export default function Home() {
               <div className="flex items-center justify-center">
                 <img
                   className="w-24 h-24 md:w-30 md:h-30 object-cover rounded-full"
-                  src="/Images/home.jpg"
+                  src="/Images/face.jpg"
                   alt="Profile"
                 />
               </div>
@@ -320,14 +319,14 @@ export default function Home() {
         </div>
       </main>
 
-      {/* About Section */}
+      {}
       <div className="bg-gray-200 pt-12 md:pt-18 px-4">
         <h2 className="text-3xl md:text-4xl font-arimo font-semibold text-gray-900 text-center mt-5">About me</h2>
         <p className="mt-4 text-base md:text-lg text-gray-700 text-center max-w-2xl mx-auto px-4">
           I'm just a normal guy with the ability to use computers. <br className="hidden md:block"/>But, the journey from where I started to where I am now is cool.
         </p>
         
-        {/* Timeline - Scrollable on mobile */}
+        {}
         <div className="position-relative flex justify-center overflow-x-auto py-4">
           <ul className="timeline overflow-x-auto min-w-max px-4">
             <li>
@@ -408,7 +407,7 @@ export default function Home() {
           </ul>
         </div>
 
-        {/* Feature Cards - Stack on mobile */}
+        {}
         <div className="flex flex-col md:flex-row gap-4 pt-7 pb-6 px-4 md:px-10">
           <div className="flex-1 bg-white backdrop-blur-md rounded-2xl shadow-lg border border-white/20 p-4 hover:shadow-green-200 transition-shadow duration-300">
             <GiGrowth className="w-8 h-8 mx-auto mt-2 text-gray-900 hover:text-green-600 transition-colors duration-200"/>
@@ -433,7 +432,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Skills Section */}
+        {}
         <div className="text-center pt-12 md:pt-18 pb-5 px-4">
           <h1 className="font-arimo text-3xl md:text-4xl text-gray-900 font-bold">Skills</h1>
           <p className="mt-4 text-base md:text-lg text-gray-700 text-center max-w-2xl mx-auto">
@@ -441,7 +440,7 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 mt-10 max-w-5xl mx-auto">
-            {/* Programming Languages */}
+            {}
             <div>
               <h2 className="text-xl md:text-2xl font-arimo text-gray-900 font-semibold mb-4">Programming Languages</h2>
               <div className="grid grid-cols-4 gap-4 justify-items-center">
@@ -455,7 +454,7 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Frameworks */}
+            {}
             <div className="mt-8 lg:mt-0">
               <h2 className="text-xl md:text-2xl font-arimo text-gray-900 font-semibold mb-4">Frameworks & Technologies</h2>
               <div className="grid grid-cols-4 gap-4 justify-items-center">
@@ -475,7 +474,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Experience Section */}
+        {}
         <div className="text-center pt-12 md:pt-18 pb-5 px-4">
           <h1 className="font-arimo text-3xl md:text-4xl text-gray-900 font-bold">Experience</h1>
           <p className="mt-4 text-base md:text-lg text-gray-700 text-center max-w-2xl mx-auto">
@@ -493,7 +492,7 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Contact Section */}
+        {}
         <div className="text-center pt-12 md:pt-18 pb-5 px-4">
           <h1 className="font-arimo text-3xl md:text-4xl text-gray-900 font-bold">Contact</h1>
           <p className="mt-4 text-base md:text-lg text-gray-700 text-center max-w-2xl mx-auto">
@@ -502,7 +501,7 @@ export default function Home() {
 
           <div className="mt-6 bg-gray-300 backdrop-blur-md rounded-2xl shadow-lg border border-white/20 mx-2 md:mx-auto max-w-4xl">
             <div className="flex flex-col md:flex-row gap-6 p-4 md:p-6">
-              {/* Contact Buttons */}
+              {}
               <div className="flex-1 flex flex-col items-center space-y-3 md:space-y-4">
                 <h3 className="text-lg md:text-xl text-center font-arimo text-gray-900 font-semibold mt-2 mb-2 md:mb-4">
                   Get in Touch!
@@ -568,7 +567,7 @@ export default function Home() {
                       {contactLoading ? 'Sending...' : 'Send Message'}
                     </button>
                     
-                    {/* Status Messages */}
+                    {}
                     {contactStatus === 'success' && (
                       <p className="text-green-600 text-sm text-center font-medium">
                         ✓ Message sent successfully! I'll get back to you soon.
@@ -586,7 +585,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Comments Section */}
+        {}
         <div className="text-center pt-12 md:pt-18 pb-5 px-4">
           <h1 className="text-3xl md:text-4xl text-gray-900 font-arimo">Comments</h1>
           <p className="mt-4 text-base md:text-lg text-gray-700 text-center max-w-2xl mx-auto">
@@ -625,7 +624,7 @@ export default function Home() {
             </div>
           </form>
 
-          {/* Display fetched comments */}
+          {}
           <div className="mt-6 md:mt-8">
             {loading && <p className="text-center text-gray-700">Loading comments...</p>}
             {!loading && commentList.length === 0 && <p className="text-center text-gray-700">No comments yet. Be the first!</p>}
@@ -639,7 +638,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Footer */}
+        {}
         <div className="py-6 bg-gray-300 mt-10">
           <p className="text-center text-black text-sm font-medium">
             © 2025 Muhammad Fauzan. All rights reserved.
