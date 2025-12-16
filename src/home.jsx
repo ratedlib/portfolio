@@ -347,7 +347,7 @@ export default function Home() {
                   <span className="badge badge-primary size-3 rounded-full p-0"></span>
                 </span>
               </div>
-              <div className="timeline-end timeline-box text-sm">Addicted to <br/>gaming</div>
+              <div className="timeline-end timeline-box text-sm">Discovered <br/>Dota 2</div>
               <hr className="bg-purple-500"/>
             </li>
             <li>
