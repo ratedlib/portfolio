@@ -176,7 +176,7 @@ export default function Home() {
           <FaXTwitter className="w-6 h-6" />
         </a>
         <a
-          href="www.linkedin.com/in/muhammad-fauzan-346511320"
+          href="https://www.linkedin.com/in/muhammad-fauzan-813651356/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-gray-900 hover:text-pink-600 transition-colors duration-200"
